@@ -1,5 +1,6 @@
 #include <rpi_pico/rp2040.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "elpekenin/behaviors.dtsi"
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -9,7 +10,7 @@
     };
     spi1_default: spi1_default {
         group1 {
-            pinmux = <SPI1_TX_P15>, <SPI1_SCK_P10>, <SPI1_CSN_P9>, <SPI1_CSN_P13>;
+            pinmux = <SPI0_TX_P7>, <SPI1_SCK_P10>, <SPI1_CSN_P9>, <SPI1_CSN_P13>;
         };
         group2 {
             pinmux = <SPI1_RX_P8>;
@@ -18,7 +19,7 @@
     };
 };
 
-&spi0_default {
+&pico_spi {
     status = "okay";
     cs-gpios = <&gpio0 0 GPIO_ACTIVE_LOW>, <&gpio0 5 GPIO_ACTIVE_LOW>;
     shifter0: 595@0 {
@@ -87,6 +88,13 @@
             , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
+    };
+};
+
+gpios {
+    compatible = "gpio-leds";
+    green: green {
+        gpios = <&shifter1 1 GPIO_ACTIVE_LOW>;
     };
 };
 
