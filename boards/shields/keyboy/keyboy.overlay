@@ -91,7 +91,7 @@
     };
 };
 
-gpios {
+&gpios {
     compatible = "gpio-leds";
     green: green {
         gpios = <&shifter1 1 GPIO_ACTIVE_LOW>;
