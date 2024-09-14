@@ -1,0 +1,92 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            pinmux = <SPI0_CSN_P0>, <SPI0_SCK_P2>, <SPI0_TX_P3>, <SPI0_CSN_P5>;
+        };
+    };
+
+    spi1_default: spi1_default {
+        group1 {
+            pinmux = <SPI1_TX_7>, <SPI1_CSN_P9>, <SPI1_SCK_P10>, <SPI1_CSN_13>;
+        };
+        group2 {
+            pinmux = <SPI1_RX_P8>;
+            input-enable;
+        }
+    };
+};
+
+&spi0_default {
+    status = "okay";
+    cs-gpios = <&rpi_pico 0 GPIO_ACTIVE_LOW>, <&rpi_pcio 5 GPIO_ACTIVE_LOW>;
+    col-shifter: 595@0 {
+        compatible = "zmk,gpio-595";
+        status = "okay";
+        gpio-controller;
+        spi-max-frequency = <5000000>;
+        reg = <0>;
+        #gpio-cells = <2>;
+        ngpios = <16>;
+    };
+    emu-shifter: 595@1 {
+        compatible = "zmk,gpio-595";
+        status = "okay";
+        gpio-controller;
+        spi-max-frequency = <5000000>;
+        reg = <0>;
+        #gpio-cells = <2>;
+        ngpios = <24>;
+    };
+};
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix-transform = &default_transform;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <5>;
+
+        map = <
+        RC(0, 0) RC(0, 1) RC(0, 2) RC(0, 3) RC(0, 4) RC(0, 5) RC(0, 6) RC(0, 7) RC(0, 8) RC(0, 9) RC(0, 10) RC(0, 11)
+        RC(1, 0) RC(1, 1) RC(1, 2) RC(1, 3) RC(1, 4) RC(1, 5) RC(1, 6) RC(1, 7) RC(1, 8) RC(1, 9) RC(1, 10) RC(1, 11)
+        RC(2, 0) RC(2, 1) RC(2, 2) RC(2, 3) RC(2, 4) RC(2, 5) RC(2, 6) RC(2, 7) RC(2, 8) RC(2, 9) RC(2, 10) RC(2, 11)
+        RC(3, 0) RC(3, 1) RC(3, 2) RC(3, 3) RC(3, 4) RC(3, 5) RC(3, 6) RC(3, 7) RC(3, 8) RC(3, 9) RC(3, 10) RC(3, 11)
+        RC(4, 0) RC(4, 1) RC(4, 2) RC(4, 3) RC(4, 4) RC(4, 5) RC(4, 6) RC(4, 7) RC(4, 8) RC(4, 9) RC(4, 10) RC(4, 11)
+        >;
+    };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+        wakeup-source;
+
+        col-gpios
+            = <&col-shifter 1 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 2 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 3 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 4 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 5 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 6 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 9 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 10 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 11 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 12 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 13 GPIO_ACTIVE_HIGH>
+            , <&col-shifter 14 GPIO_ACTIVE_HIGH>
+            ;
+
+        row-gpios
+            = <&rpi_pico 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&rpi_pico 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&rpi_pico 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&rpi_pico 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&rpi_pico 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+};
