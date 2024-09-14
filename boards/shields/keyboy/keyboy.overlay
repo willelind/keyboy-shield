@@ -1,45 +1,44 @@
+#include <rpi_pico/rp2040.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            pinmux = <SPI0_CSN_P0>, <SPI0_SCK_P2>, <SPI0_TX_P3>, <SPI0_CSN_P5>;
+            pinmux = <SPI0_SCK_P2>, <SPI0_TX_3>;
         };
     };
 
-    spi1_default: spi1_default {
-        group1 {
-            pinmux = <SPI1_TX_7>, <SPI1_CSN_P9>, <SPI1_SCK_P10>, <SPI1_CSN_13>;
-        };
-        group2 {
-            pinmux = <SPI1_RX_P8>;
-            input-enable;
-        }
-    };
+//    spi1_default: spi1_default {
+//        group1 {
+//            psels = <NRF_PSEL(SPIM_SCK, 1, 10)>,
+//            <NRF_PSEL(SPIM_MOSI, 0, 7)>,
+//            <NRF_PSEL(SPIM_MISO, 1, 8)>;
+//        };
+//    };
 };
 
-&spi0_default {
-    status = "okay";
-    cs-gpios = <&rpi_pico 0 GPIO_ACTIVE_LOW>, <&rpi_pico 5 GPIO_ACTIVE_LOW>;
-    col-shifter: 595@0 {
-        compatible = "zmk,gpio-595";
-        status = "okay";
-        gpio-controller;
-        spi-max-frequency = <5000000>;
-        reg = <0>;
-        #gpio-cells = <2>;
-        ngpios = <16>;
-    };
-    emu-shifter: 595@1 {
-        compatible = "zmk,gpio-595";
-        status = "okay";
-        gpio-controller;
-        spi-max-frequency = <5000000>;
-        reg = <0>;
-        #gpio-cells = <2>;
-        ngpios = <24>;
-    };
-};
+//&spi0_default {
+//    status = "okay";
+//    cs-gpios = <&gpio0 0 GPIO_ACTIVE_LOW>, <&gpio0 5 GPIO_ACTIVE_LOW>;
+//    col-shifter: 595@0 {
+//        compatible = "zmk,gpio-595";
+//        status = "okay";
+//        gpio-controller;
+//        spi-max-frequency = <5000000>;
+//        reg = <0>;
+//        #gpio-cells = <2>;
+//        ngpios = <16>;
+//    };
+//    emu-shifter: 595@1 {
+//        compatible = "zmk,gpio-595";
+//        status = "okay";
+//        gpio-controller;
+//        spi-max-frequency = <5000000>;
+//        reg = <0>;
+//        #gpio-cells = <2>;
+//        ngpios = <24>;
+//    };
+//};
 
 / {
     chosen {
@@ -64,29 +63,36 @@
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
-        wakeup-source;
 
         col-gpios
-            = <&col-shifter 1 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 2 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 3 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 4 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 5 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 6 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 9 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 10 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 11 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 12 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 13 GPIO_ACTIVE_HIGH>
-            , <&col-shifter 14 GPIO_ACTIVE_HIGH>
+            = <&gpio0 1 GPIO_ACTIVE_HIGH>
+            , <&gpio0 2 GPIO_ACTIVE_HIGH>
+            , <&gpio0 3 GPIO_ACTIVE_HIGH>
+            , <&gpio0 4 GPIO_ACTIVE_HIGH>
+            , <&gpio0 5 GPIO_ACTIVE_HIGH>
+            , <&gpio0 6 GPIO_ACTIVE_HIGH>
+            , <&gpio0 9 GPIO_ACTIVE_HIGH>
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+            , <&gpio0 12 GPIO_ACTIVE_HIGH>
+            , <&gpio0 13 GPIO_ACTIVE_HIGH>
+            , <&gpio0 14 GPIO_ACTIVE_HIGH>
             ;
 
         row-gpios
-            = <&rpi_pico 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&rpi_pico 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&rpi_pico 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&rpi_pico 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&rpi_pico 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
+};
+
+&gpio0 {
+    status = "okay";
+};
+
+zephyr_udc0: &usbd {
+    status = "okay";
 };
