@@ -20,7 +20,7 @@
 
 &spi0_default {
     status = "okay";
-    cs-gpios = <&rpi_pico 0 GPIO_ACTIVE_LOW>, <&rpi_pcio 5 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&rpi_pico 0 GPIO_ACTIVE_LOW>, <&rpi_pico 5 GPIO_ACTIVE_LOW>;
     col-shifter: 595@0 {
         compatible = "zmk,gpio-595";
         status = "okay";
