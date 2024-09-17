@@ -33,9 +33,9 @@
         sym_layer {
             bindings = <
 &none    &none    &none    &none    &none    &none                    &none    &none    &none    &none    &none    &trans
-&none    &none    &kp SV_7 &kp SV_8 &kp SV_9 &none                    &none    &kp SV_LBRC    &none    &kp SV_RBRC    &none    &none
-&none    &kp SV_0 &kp SV_4 &kp SV_5 &kp SV_6 &none                    &none    &kp SV_LPAR    &kp SV_UNDER    &kp SV_RPAR    &none    &none
-&none    &none    &kp SV_1 &kp SV_2 &kp SV_3 &none                    &none    &kp SV_LBKT    &none    &kp SV_RBKT    &none    &none
+&none    &none    &kp SV_N7 &kp SV_N8 &kp SV_N9 &none                    &none    &kp SV_LBRC    &none    &kp SV_RBRC    &none    &none
+&none    &kp SV_N0 &kp SV_N4 &kp SV_N5 &kp SV_N6 &none                    &none    &kp SV_LPAR    &kp SV_UNDER    &kp SV_RPAR    &none    &none
+&none    &none    &kp SV_N1 &kp SV_N2 &kp SV_N3 &none                    &none    &kp SV_LBKT    &none    &kp SV_RBKT    &none    &none
 &none    &none    &none    &none    &none    &none                    &none    &none    &none    &none    &none    &none
             >;
         };
