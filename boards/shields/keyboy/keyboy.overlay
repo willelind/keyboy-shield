@@ -1,6 +1,5 @@
 #include <rpi_pico/rp2040.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "elpekenin/behaviors.dtsi"
 
 &pinctrl {
     spi0_default: spi0_default {
