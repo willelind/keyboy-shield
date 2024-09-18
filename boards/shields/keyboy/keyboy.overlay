@@ -46,9 +46,6 @@
     
     /* Define each pin and set it to output low */
     gpio-export {
-        pinctrl-names = "default";
-        pinctrl-0 = <&shifter1_pins>;
-
         gpio0: pin0 {
             gpio-hog;
             gpios = <0 GPIO_ACTIVE_LOW>;
@@ -189,6 +186,8 @@
 
     };
 };
+
+
 
 
 / {
