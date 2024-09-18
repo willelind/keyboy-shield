@@ -41,7 +41,7 @@
     };
 };
 
-&gpio_settings {
+gpio-settings: gpio-settings {
     gpios
     = <&shifter1 0 GPIO_ACTIVE_LOW>
     , <&shifter1 1 GPIO_ACTIVE_LOW>
