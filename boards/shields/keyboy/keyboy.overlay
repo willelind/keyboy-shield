@@ -50,7 +50,28 @@
     gpios {
         compatible = "gpio-leds";
         green: green {
-            gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
+            gpios 
+            = <&shifter1 0 GPIO_ACTIVE_LOW>
+            , <&shifter1 1 GPIO_ACTIVE_LOW>
+            , <&shifter1 2 GPIO_ACTIVE_LOW>
+            , <&shifter1 3 GPIO_ACTIVE_LOW>
+            , <&shifter1 4 GPIO_ACTIVE_LOW>
+            , <&shifter1 5 GPIO_ACTIVE_LOW>
+            , <&shifter1 8 GPIO_ACTIVE_LOW>
+            , <&shifter1 9 GPIO_ACTIVE_LOW>
+            , <&shifter1 10 GPIO_ACTIVE_LOW>
+            , <&shifter1 11 GPIO_ACTIVE_LOW>
+            , <&shifter1 12 GPIO_ACTIVE_LOW>
+            , <&shifter1 13 GPIO_ACTIVE_LOW>
+            , <&shifter1 14 GPIO_ACTIVE_LOW>
+            , <&shifter1 15 GPIO_ACTIVE_LOW>
+            , <&shifter1 16 GPIO_ACTIVE_LOW>
+            , <&shifter1 17 GPIO_ACTIVE_LOW>
+            , <&shifter1 18 GPIO_ACTIVE_LOW>
+            , <&shifter1 19 GPIO_ACTIVE_LOW>
+            , <&shifter1 20 GPIO_ACTIVE_LOW>
+            , <&shifter1 21 GPIO_ACTIVE_LOW>
+            , <&shifter1 22 GPIO_ACTIVE_LOW>;
         };
     };
 
@@ -85,27 +106,6 @@
             , <&shifter0 11 GPIO_ACTIVE_HIGH>
             , <&shifter0 12 GPIO_ACTIVE_HIGH>
             , <&shifter0 13 GPIO_ACTIVE_HIGH>
-            , <&shifter1 0 GPIO_ACTIVE_LOW>
-            , <&shifter1 1 GPIO_ACTIVE_LOW>
-            , <&shifter1 2 GPIO_ACTIVE_LOW>
-            , <&shifter1 3 GPIO_ACTIVE_LOW>
-            , <&shifter1 4 GPIO_ACTIVE_LOW>
-            , <&shifter1 5 GPIO_ACTIVE_LOW>
-            , <&shifter1 8 GPIO_ACTIVE_LOW>
-            , <&shifter1 9 GPIO_ACTIVE_LOW>
-            , <&shifter1 10 GPIO_ACTIVE_LOW>
-            , <&shifter1 11 GPIO_ACTIVE_LOW>
-            , <&shifter1 12 GPIO_ACTIVE_LOW>
-            , <&shifter1 13 GPIO_ACTIVE_LOW>
-            , <&shifter1 14 GPIO_ACTIVE_LOW>
-            , <&shifter1 15 GPIO_ACTIVE_LOW>
-            , <&shifter1 16 GPIO_ACTIVE_LOW>
-            , <&shifter1 17 GPIO_ACTIVE_LOW>
-            , <&shifter1 18 GPIO_ACTIVE_LOW>
-            , <&shifter1 19 GPIO_ACTIVE_LOW>
-            , <&shifter1 20 GPIO_ACTIVE_LOW>
-            , <&shifter1 21 GPIO_ACTIVE_LOW>
-            , <&shifter1 22 GPIO_ACTIVE_LOW>
             ;
 
         row-gpios
