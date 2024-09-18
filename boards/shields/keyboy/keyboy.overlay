@@ -50,10 +50,10 @@
     gpios {
         compatible = "gpio-leds";
         green: green {
-            gpios 
-            = <&shifter1 21 GPIO_OUTPUT_HIGH>
-            , <&shifter1 19 GPIO_OUTPUT_LOW>
-            ;
+            gpios = <&shifter1 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        };
+        blue: blue {
+            gpios = <&shifter1 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         };
     };
 
@@ -76,18 +76,18 @@
         diode-direction = "col2row";
 
         col-gpios
-            = <&shifter0 0 GPIO_OUTPUT_HIGH>
-            , <&shifter0 1 GPIO_OUTPUT_HIGH>
-            , <&shifter0 2 GPIO_OUTPUT_HIGH>
-            , <&shifter0 3 GPIO_OUTPUT_HIGH>
-            , <&shifter0 4 GPIO_OUTPUT_HIGH>
-            , <&shifter0 5 GPIO_OUTPUT_HIGH>
-            , <&shifter0 8 GPIO_OUTPUT_HIGH>
-            , <&shifter0 9 GPIO_OUTPUT_HIGH>
-            , <&shifter0 10 GPIO_OUTPUT_HIGH>
-            , <&shifter0 11 GPIO_OUTPUT_HIGH>
-            , <&shifter0 12 GPIO_OUTPUT_HIGH>
-            , <&shifter0 13 GPIO_OUTPUT_HIGH>
+            = <&shifter0 0 GPIO_ACTIVE_HIGH>
+            , <&shifter0 1 GPIO_ACTIVE_HIGH>
+            , <&shifter0 2 GPIO_ACTIVE_HIGH>
+            , <&shifter0 3 GPIO_ACTIVE_HIGH>
+            , <&shifter0 4 GPIO_ACTIVE_HIGH>
+            , <&shifter0 5 GPIO_ACTIVE_HIGH>
+            , <&shifter0 8 GPIO_ACTIVE_HIGH>
+            , <&shifter0 9 GPIO_ACTIVE_HIGH>
+            , <&shifter0 10 GPIO_ACTIVE_HIGH>
+            , <&shifter0 11 GPIO_ACTIVE_HIGH>
+            , <&shifter0 12 GPIO_ACTIVE_HIGH>
+            , <&shifter0 13 GPIO_ACTIVE_HIGH>
             ;
 
         row-gpios
