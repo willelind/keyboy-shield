@@ -41,6 +41,156 @@
     };
 };
 
+&shifter1 {
+    status = "okay";
+    
+    /* Define each pin and set it to output low */
+    gpio-export {
+        pinctrl-names = "default";
+        pinctrl-0 = <&shifter1_pins>;
+
+        gpio0: pin0 {
+            gpio-hog;
+            gpios = <0 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio1: pin1 {
+            gpio-hog;
+            gpios = <1 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio2: pin2 {
+            gpio-hog;
+            gpios = <2 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio3: pin3 {
+            gpio-hog;
+            gpios = <3 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio4: pin4 {
+            gpio-hog;
+            gpios = <4 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio5: pin5 {
+            gpio-hog;
+            gpios = <5 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio6: pin6 {
+            gpio-hog;
+            gpios = <6 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio7: pin7 {
+            gpio-hog;
+            gpios = <7 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio8: pin8 {
+            gpio-hog;
+            gpios = <8 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio9: pin9 {
+            gpio-hog;
+            gpios = <9 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio10: pin10 {
+            gpio-hog;
+            gpios = <10 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio11: pin11 {
+            gpio-hog;
+            gpios = <11 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio12: pin12 {
+            gpio-hog;
+            gpios = <12 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio13: pin13 {
+            gpio-hog;
+            gpios = <13 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio14: pin14 {
+            gpio-hog;
+            gpios = <14 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio15: pin15 {
+            gpio-hog;
+            gpios = <15 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio16: pin16 {
+            gpio-hog;
+            gpios = <16 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio17: pin17 {
+            gpio-hog;
+            gpios = <17 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio18: pin18 {
+            gpio-hog;
+            gpios = <18 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio19: pin19 {
+            gpio-hog;
+            gpios = <19 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio20: pin20 {
+            gpio-hog;
+            gpios = <20 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio21: pin21 {
+            gpio-hog;
+            gpios = <21 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+        gpio22: pin22 {
+            gpio-hog;
+            gpios = <22 GPIO_ACTIVE_LOW>;
+            output-low;
+        };
+
+    };
+};
+
+
 / {
     chosen {
         zmk,kscan = &kscan0;
