@@ -43,6 +43,7 @@
 
 &shifter1 {
     pin@21 {
+        gpio-hog;
         gpios = <21 GPIO_ACTIVE_HIGH>;
         /* Any other configuration parameters */
     };
