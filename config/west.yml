@@ -2,8 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: elpekenin
-      url-base: https://github.com/elpekenin
+    - name: willelind
+      url-base: https://github.com/willelind
     - name: joelspadin
       url-base: https://github.com/joelspadin
     # Additional modules containing boards/shields/custom code can be listed here as well
@@ -14,7 +14,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: zmk-userspace
-      remote: elpekenin
+      remote: willelind
       revision: main
     - name: zmk-locales
       remote: joelspadin
