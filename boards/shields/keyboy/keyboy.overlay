@@ -75,21 +75,20 @@
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
 
-        col-gpios
-            = <&shifter0 0 GPIO_ACTIVE_HIGH>
-            , <&shifter0 1 GPIO_ACTIVE_HIGH>
-            , <&shifter0 2 GPIO_ACTIVE_HIGH>
-            , <&shifter0 3 GPIO_ACTIVE_HIGH>
-            , <&shifter0 4 GPIO_ACTIVE_HIGH>
-            , <&shifter0 5 GPIO_ACTIVE_HIGH>
-            , <&shifter0 8 GPIO_ACTIVE_HIGH>
-            , <&shifter0 9 GPIO_ACTIVE_HIGH>
-            , <&shifter0 10 GPIO_ACTIVE_HIGH>
-            , <&shifter0 11 GPIO_ACTIVE_HIGH>
-            , <&shifter0 12 GPIO_ACTIVE_HIGH>
-            , <&shifter0 13 GPIO_ACTIVE_HIGH>
-            , <&shifter1 21 GPIO_ACTIVE_LOW>
-            ;
+        //col-gpios
+        //    = <&shifter0 0 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 1 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 2 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 3 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 4 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 5 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 8 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 9 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 10 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 11 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 12 GPIO_ACTIVE_HIGH>
+        //    , <&shifter0 13 GPIO_ACTIVE_HIGH>
+        //    ;
 
         row-gpios
             = <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>

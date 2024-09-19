@@ -53,9 +53,9 @@
         emu_layer {
             bindings = <
 &none     &none     &none            &none             &none             &none                        &none      &none      &none      &none      &none      &trans
-&none     &kp Z     &gpio 21 GPIO_ON &gpio 21 GPIO_OFF &gpio 0 GPIO_TOG  &none                        &none      &none      &none      &none      &tog 3     &none
+&none     &kp Z     &gpio 21 GPIO_ON &gpio 21 GPIO_OFF &gpio 21 GPIO_TOG &none                        &none      &none      &none      &none      &tog 3     &none
 &none     &none     &gpio 19 GPIO_ON &gpio 19 GPIO_OFF &gpio 12 GPIO_TOG &none                        &none      &none      &none      &none      &none      &none
-&none     &none     &gpio 0 GPIO_ON  &gpio 0 GPIO_OFF  &gpio 1 GPIO_TOG  &none                        &none      &none      &none      &none      &none      &none
+&none     &none     &gpio 0 GPIO_ON  &gpio 0 GPIO_OFF  &gpio 0 GPIO_TOG  &none                        &none      &none      &none      &none      &none      &none
 &none     &none     &none            &none             &none             &none                        &none      &none      &none      &none      &none      &none
             >;
         };
