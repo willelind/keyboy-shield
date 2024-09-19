@@ -20,3 +20,4 @@
 include:
   - board: rpi_pico
     shield: keyboy
+    snippet: zmk-usb-logging
