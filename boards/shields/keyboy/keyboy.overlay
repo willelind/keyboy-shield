@@ -78,6 +78,8 @@
             , <&shifter0 11 GPIO_ACTIVE_HIGH>
             , <&shifter0 12 GPIO_ACTIVE_HIGH>
             , <&shifter0 13 GPIO_ACTIVE_HIGH>
+            , <&shifter1 21 GPIO_ACTIVE_LOW>
+            , <&shifter1 19 GPIO_ACTIVE_HIGH>
             ;
 
         row-gpios
@@ -87,16 +89,6 @@
             , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
-    };
-    
-    gpios {
-        compatible = "gpio-leds";
-        green: green {
-            gpios = <&shifter1 21 GPIO_ACTIVE_LOW>;
-        };
-        red: red {
-            gpios = <&shifter1 19 GPIO_ACTIVE_LOW>;
-        };
     };
 };
 
