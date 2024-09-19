@@ -47,37 +47,6 @@
         zmk,matrix-transform = &default_transform;
     };
 
-    gpios {
-        compatible = "gpio-leds";
-        green: green {
-            gpios
-            = <&shifter1 21 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 1 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 2 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 3 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 4 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 5 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 6 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 7 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 8 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 9 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 10 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 11 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 12 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 13 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 14 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 15 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 16 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 17 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 18 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 19 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 20 GPIO_ACTIVE_HIGH>
-    //        , <&shifter1 21 GPIO_ACTIVE_LOW>
-    //        , <&shifter1 22 GPIO_ACTIVE_HIGH>
-            ;
-        };
-    };
-
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
@@ -119,7 +88,13 @@
             , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
-
+    
+    gpios {
+        compatible = "gpio-leds";
+        green: green {
+            gpios = <&shifter1 21 GPIO_ACTIVE_HIGH>;
+        };
+    };
 };
 
 &gpio0 {
