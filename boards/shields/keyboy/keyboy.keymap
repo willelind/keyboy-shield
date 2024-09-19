@@ -4,6 +4,16 @@
 #include <locale/keys_sv.h>
 
 / {
+	gpios {
+    	compatible = "gpio-leds";
+    	green: green {
+    	    gpios = <&shifter1 21 GPIO_ACTIVE_LOW>;
+    	};
+    	blue: blue {
+    	    gpios = <&shifter1 19 GPIO_ACTIVE_HIGH>;
+    	};
+	};
+
     keymap {
         compatible = "zmk,keymap";
 
