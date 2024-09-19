@@ -3,6 +3,26 @@
 #include "elpekenin/behaviors.dtsi"
 #include <locale/keys_sv.h>
 
+&gpio_595 {
+    compatible = "zmk,gpio-595";
+    status = "okay";
+    gpio-controller;
+    spi-max-frequency = <5000000>;
+    reg = <1 0 1>;  // This matches your shifter1 configuration
+    #gpio-cells = <2>;
+    ngpios = <24>;
+};
+
+#define GPIO_595_SET_LOW(name, gpio_pin) \
+    &gpio_595 { \
+        pinctrl-0 = <&pinctrl_##name>; \
+        pinctrl-names = "default"; \
+        gpio-pin = <gpio_pin>; \
+        gpio-value = <0>; \
+    }
+
+GPIO_595_SET_LOW(shifter1, 21);
+
 / {
     //macros {
     //    e_gpio: e_gpio {
