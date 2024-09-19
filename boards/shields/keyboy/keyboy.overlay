@@ -72,7 +72,7 @@
             , <&shifter1 18 GPIO_ACTIVE_HIGH>
             , <&shifter1 19 GPIO_ACTIVE_HIGH>
             , <&shifter1 20 GPIO_ACTIVE_HIGH>
-            , <&shifter1 21 GPIO_ACTIVE_HIGH>
+            , <&shifter1 21 GPIO_ACTIVE_LOW>
             , <&shifter1 22 GPIO_ACTIVE_HIGH>
             ;
         };
