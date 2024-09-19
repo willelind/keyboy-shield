@@ -3,16 +3,6 @@
 #include "elpekenin/behaviors.dtsi"
 #include <locale/keys_sv.h>
 
-#define GPIO_595_SET_LOW(name, gpio_pin) \
-    &shifter1 { \
-        pinctrl-0 = <&pinctrl_##name>; \
-        pinctrl-names = "default"; \
-        gpio-pin = <gpio_pin>; \
-        gpio-value = <0>; \
-    }
-
-GPIO_595_SET_LOW(shifter1, 21);
-
 / {
     //macros {
     //    e_gpio: e_gpio {
