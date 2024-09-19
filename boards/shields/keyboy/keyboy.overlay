@@ -41,11 +41,11 @@
     };
 };
 
-&gpio0 {
+&shifter1 {
     pin@21 {
         label = "SHIFTER1_21";
         gpio-hog;
-        gpios = <&shifter1 21 GPIO_ACTIVE_LOW>;
+        gpios = <21 GPIO_ACTIVE_HIGH>;
         /* Any other configuration parameters */
     };
 };
