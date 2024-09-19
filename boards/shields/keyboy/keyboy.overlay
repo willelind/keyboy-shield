@@ -1,6 +1,9 @@
 #include <rpi_pico/rp2040.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 
+CONFIG_KERNEL_INIT_PRIORITY_DEFAULT = 10
+CONFIG_GPIO_595_INIT_PRIORITY = 5
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
