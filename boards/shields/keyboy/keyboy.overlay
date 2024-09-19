@@ -92,8 +92,10 @@
     gpios {
         compatible = "gpio-leds";
         green: green {
-            gpios = <&shifter1 21 GPIO_ACTIVE_HIGH>,
-            <&shifter1 19 GPIO_ACTIVE_LOW>;
+            gpios = <&shifter1 21 GPIO_ACTIVE_HIGH>;
+        };
+        red: red {
+            gpios = <&shifter1 19 GPIO_ACTIVE_LOW>;
         };
     };
 };
