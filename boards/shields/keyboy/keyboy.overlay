@@ -91,19 +91,19 @@
             ;
     };
 
-    led_0: led_0 {
-        compatible = "gpio-leds";
-        red_led: led_0r {
-            gpios = <&shifter1 21 GPIO_ACTIVE_HIGH>;
-        };
-        green_led: led_0g {
-            gpios = <&shifter1 19 GPIO_ACTIVE_LOW>;
-        };
-        blue_led: led_0b {
-            gpios = <&shifter1 17 GPIO_ACTIVE_LOW>;
-        };
-     };
+    kscan1: kscan_1 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
 
+        col-gpios
+            = <&shifter1 21 GPIO_ACTIVE_HIGH>
+            , <&shifter1 19 GPIO_ACTIVE_LOW>
+            , <&shifter1 17 GPIO_ACTIVE_LOW>
+            ;
+
+        row-gpios
+            = <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    };
 };
 
 &gpio0 {
