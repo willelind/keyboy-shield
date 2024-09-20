@@ -13,7 +13,7 @@
 &kp ESC  &kp B     &kp L       &kp D      &kp C        &kp V                  &kp Z    &kp Y       &kp O         &kp U           &tog 3           &none
 &kp TAB  &kp N     &kp R       &kp T      &kp S        &kp G                  &kp P    &kp H       &kp A         &kp E           &kp I           &none
 &sk LALT &kp Q     &kp X       &kp M      &kp W        &kp J                  &kp K    &kp F       &kp SV_A_RING &kp SV_A_UMLAUT &kp SV_O_UMLAUT &none
-&sk LGUI &sk LCTRL &none       &none      &gpio 0 GPIO_TOG  &gpio 1 GPIO_TOG              &sl 1    &sk LSHIFT  &none         &none           &none           &none
+&sk LGUI &sk LCTRL &none       &none      &none        &none                  &sl 1    &sk LSHIFT  &none         &none           &none           &none
             >;
         };
 
@@ -40,9 +40,9 @@
         emu_layer {
             bindings = <
 &none     &none     &none            &none             &none             &none                        &none      &none      &none      &none      &none      &trans
-&none     &kp Z     &gpio 21 GPIO_ON &gpio 21 GPIO_OFF &gpio 21 GPIO_TOG &none                        &none      &none      &none      &none      &tog 3     &none
-&none     &none     &gpio 19 GPIO_ON &gpio 19 GPIO_OFF &gpio 12 GPIO_TOG &none                        &none      &none      &none      &none      &none      &none
-&none     &none     &gpio 0 GPIO_ON  &gpio 0 GPIO_OFF  &gpio 0 GPIO_TOG  &none                        &none      &none      &none      &none      &none      &none
+&none     &kp Z     &none            &none             &none             &none                        &none      &none      &none      &none      &tog 3     &none
+&none     &none     &none            &none             &none             &none                        &none      &none      &none      &none      &none      &none
+&none     &none     &none            &none             &none             &none                        &none      &none      &none      &none      &none      &none
 &none     &none     &none            &none             &none             &none                        &none      &none      &none      &none      &none      &none
             >;
         };

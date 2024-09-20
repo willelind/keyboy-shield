@@ -90,6 +90,20 @@
             , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
+
+    led_0: led_0 {
+        compatible = "gpio-leds";
+        red_led: led_0r {
+            gpios = <&shifter1 21 GPIO_ACTIVE_LOW>;
+        };
+        green_led: led_0g {
+            gpios = <&shifter1 19 GPIO_ACTIVE_LOW>;
+        };
+        blue_led: led_0b {
+            gpios = <&shifter1 17 GPIO_ACTIVE_LOW>;
+        };
+     };
+
 };
 
 &gpio0 {
