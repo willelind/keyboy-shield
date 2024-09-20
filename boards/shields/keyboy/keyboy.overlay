@@ -97,7 +97,7 @@
             gpios = <&shifter1 21 GPIO_ACTIVE_LOW>;
         };
         green_led: led_0g {
-            gpios = <&shifter1 19 GPIO_ACTIVE_LOW>;
+            gpios = <&shifter1 19 GPIO_ACTIVE_HIGH>;
         };
         blue_led: led_0b {
             gpios = <&shifter1 17 GPIO_ACTIVE_LOW>;

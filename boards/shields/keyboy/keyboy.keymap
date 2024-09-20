@@ -10,9 +10,9 @@
         default_layer {
             bindings = <
 &none    &kp ESC   &kp SV_EXCL &kp SV_DOT &kp SV_COMMA &kp SV_QMARK           &none    &kp SV_PLUS &kp SV_EQUAL  &kp SV_MINUS    &none           &tog 3
-&kp ESC  &kp B     &kp L       &kp D      &kp C        &kp V                  &kp Z    &kp Y       &kp O         &kp U           &tog 3           &none
-&kp TAB  &kp N     &kp R       &kp T      &kp S        &kp G                  &kp P    &kp H       &kp A         &kp E           &kp I           &none
-&sk LALT &kp Q     &kp X       &kp M      &kp W        &kp J                  &kp K    &kp F       &kp SV_A_RING &kp SV_A_UMLAUT &kp SV_O_UMLAUT &none
+&kp ESC  &kp B     &gpio 0 GPIO_ON        &gpio 1 GPIO_ON      &kp C        &kp V                  &kp Z    &kp Y       &kp O         &kp U           &tog 3           &none
+&kp TAB  &kp N     &gpio 0 GPIO_OFF       &gpio 1 GPIO_OFF      &kp S        &kp G                  &kp P    &kp H       &kp A         &kp E           &kp I           &none
+&sk LALT &kp Q     &gpio 0 GPIO_TOG       &gpio 1 GPIO_TOG      &kp W        &kp J                  &kp K    &kp F       &kp SV_A_RING &kp SV_A_UMLAUT &kp SV_O_UMLAUT &none
 &sk LGUI &sk LCTRL &none       &none      &gpio 1 GPIO_TOG        &none                  &sl 1    &sk LSHIFT  &none         &none           &none           &none
             >;
         };
