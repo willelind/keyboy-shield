@@ -78,8 +78,8 @@
             , <&shifter0 11 GPIO_ACTIVE_HIGH>
             , <&shifter0 12 GPIO_ACTIVE_HIGH>
             , <&shifter0 13 GPIO_ACTIVE_HIGH>
-            , <&shifter1 21 GPIO_ACTIVE_LOW>
             , <&shifter1 19 GPIO_ACTIVE_HIGH>
+            , <&shifter1 17 GPIO_ACTIVE_LOW>
             ;
 
         row-gpios
@@ -89,20 +89,6 @@
             , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
-    };
-
-    kscan1: kscan_1 {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-
-        col-gpios
-            = <&shifter1 21 GPIO_ACTIVE_HIGH>
-            , <&shifter1 19 GPIO_ACTIVE_HIGH>
-            , <&shifter1 17 GPIO_ACTIVE_LOW>
-            ;
-
-        row-gpios
-            = <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 };
 
