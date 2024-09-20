@@ -97,7 +97,7 @@
 
         col-gpios
             = <&shifter1 21 GPIO_ACTIVE_HIGH>
-            , <&shifter1 19 GPIO_ACTIVE_LOW>
+            , <&shifter1 19 GPIO_ACTIVE_HIGH>
             , <&shifter1 17 GPIO_ACTIVE_LOW>
             ;
 
