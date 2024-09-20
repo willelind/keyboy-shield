@@ -1,6 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-//#include "elpekenin/behaviors.dtsi"
+#include "elpekenin/behaviors.dtsi"
 #include <locale/keys_sv.h>
 
 / {
@@ -13,7 +13,7 @@
 &kp ESC  &kp B     &kp L       &kp D      &kp C        &kp V                  &kp Z    &kp Y       &kp O         &kp U           &tog 3           &none
 &kp TAB  &kp N     &kp R       &kp T      &kp S        &kp G                  &kp P    &kp H       &kp A         &kp E           &kp I           &none
 &sk LALT &kp Q     &kp X       &kp M      &kp W        &kp J                  &kp K    &kp F       &kp SV_A_RING &kp SV_A_UMLAUT &kp SV_O_UMLAUT &none
-&sk LGUI &sk LCTRL &none       &none      &none        &none                  &sl 1    &sk LSHIFT  &none         &none           &none           &none
+&sk LGUI &sk LCTRL &none       &none      &gpio 1 GPIO_TOG        &none                  &sl 1    &sk LSHIFT  &none         &none           &none           &none
             >;
         };
 
