@@ -18,7 +18,7 @@
     //};
 };
 
-&pro_micro_spi {
+&nice_nano_spi {
     status = "okay";
     cs-gpios = <&pro_micro 0 GPIO_ACTIVE_LOW>, <&pro_micro 3 GPIO_ACTIVE_LOW>;
     shifter0: 595@0 {
