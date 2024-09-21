@@ -3,6 +3,6 @@ id: keyboy
 name: KEYBOY
 type: shield
 url: https://github.com/willelind/keyboy-shield
-requires: [rpi_pico]
+requires: [nice_nano_v2]
 features:
   - keys
