@@ -1,4 +1,3 @@
-#include <rpi_pico/rp2040.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 
 &pinctrl {
@@ -19,7 +18,7 @@
     //};
 };
 
-&pico_spi {
+&nice_view_spi {
     status = "okay";
     cs-gpios = <&pro_micro 2 GPIO_ACTIVE_LOW>, <&pro_micro 3 GPIO_ACTIVE_LOW>;
     shifter0: 595@0 {
