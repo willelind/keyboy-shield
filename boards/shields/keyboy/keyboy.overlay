@@ -3,7 +3,7 @@
 &pinctrl {
     spi1_default: spi1_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 0)>,
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 2)>,
             <NRF_PSEL(SPIM_SCK, 1, 1)>;
         };
     };
@@ -20,7 +20,7 @@
 
 &spi1 {
     status = "okay";
-    cs-gpios = <&pro_micro 2 GPIO_ACTIVE_LOW>, <&pro_micro 3 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&pro_micro 0 GPIO_ACTIVE_LOW>, <&pro_micro 3 GPIO_ACTIVE_LOW>;
     shifter0: 595@0 {
         compatible = "zmk,gpio-595";
         status = "okay";
@@ -83,11 +83,11 @@
             ;
 
         row-gpios
-            = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
 };
