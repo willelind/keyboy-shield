@@ -1,32 +1,35 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
-//&pinctrl {
-//    spi1_default: spi1_default {
-//        group1 {
-//            psels = <NRF_PSEL(SPIM_MOSI, 0, 17)>,
-//            <NRF_PSEL(SPIM_SCK, 0, 06)>;
-//        };
-//    };
-//    //spi1_default: spi1_default {
-//    //    group1 {
-//    //        pinmux = <SPI0_TX_P7>, <SPI1_SCK_P10>, <SPI1_CSN_P9>, <SPI1_CSN_P13>;
-//    //    };
-//    //    group2 {
-//    //        pinmux = <SPI1_RX_P8>;
-//    //        input-enable;
-//    //    };
-//    //};
-//};
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 17)>,
+            <NRF_PSEL(SPIM_SCK, 0, 6)>;
+        };
+    };
+    //spi1_default: spi1_default {
+    //    group1 {
+    //        pinmux = <SPI0_TX_P7>, <SPI1_SCK_P10>, <SPI1_CSN_P9>, <SPI1_CSN_P13>;
+    //    };
+    //    group2 {
+    //        pinmux = <SPI1_RX_P8>;
+    //        input-enable;
+    //    };
+    //};
+};
 
-&pro_micro_spi {
+&spi0 {
+    compatible = "nordic,nrf-spim";
     status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
     cs-gpios = <&pro_micro 0 GPIO_ACTIVE_LOW>;
     shifter0: 595@0 {
         compatible = "zmk,gpio-595";
         status = "okay";
         gpio-controller;
         spi-max-frequency = <2000000>;
-        reg = <0 0 1>;
+        reg = <0>;
         #gpio-cells = <2>;
         ngpios = <16>;
     };
@@ -81,11 +84,11 @@
             ;
 
         row-gpios
-            = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
 };
