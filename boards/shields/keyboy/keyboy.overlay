@@ -1,7 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 &pinctrl {
-    spi0_default: spi0_default {
+    spi3_default: spi3_default {
         group1 {
             psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>,
             <NRF_PSEL(SPIM_SCK, 0, 8)>;
@@ -18,10 +18,10 @@
     //};
 };
 
-&spi0 {
+&spi3 {
     compatible = "nordic,nrf-spim";
     status = "okay";
-    pinctrl-0 = <&spi0_default>;
+    pinctrl-0 = <&spi3_default>;
     pinctrl-names = "default";
     cs-gpios = <&pro_micro 2 GPIO_ACTIVE_LOW>;
     shifter0: 595@0 {
