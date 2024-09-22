@@ -1,47 +1,23 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
-&pinctrl {
-    spi3_default: spi3_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>,
-            <NRF_PSEL(SPIM_SCK, 0, 8)>;
-        };
-    };
-    //spi1_default: spi1_default {
-    //    group1 {
-    //        pinmux = <SPI0_TX_P7>, <SPI1_SCK_P10>, <SPI1_CSN_P9>, <SPI1_CSN_P13>;
-    //    };
-    //    group2 {
-    //        pinmux = <SPI1_RX_P8>;
-    //        input-enable;
-    //    };
-    //};
-};
+board_spi: &spi0 {
+  status = "okay";
+  compatible = "nordic,nrf-spim";
+  pinctrl-0 = <&spi0_default>;
+  pinctrl-1 = <&spi0_sleep>;
+  pinctrl-names = "default", "sleep";
 
-&spi3 {
-    compatible = "nordic,nrf-spim";
+  cs-gpios =  <&pro_micro 1 GPIO_ACTIVE_LOW>;
+
+  shift_reg: 595@0 {
+    compatible = "zmk,gpio-595";
     status = "okay";
-    pinctrl-0 = <&spi3_default>;
-    pinctrl-names = "default";
-    cs-gpios = <&pro_micro 2 GPIO_ACTIVE_LOW>;
-    shifter0: 595@0 {
-        compatible = "zmk,gpio-595";
-        status = "okay";
-        gpio-controller;
-        spi-max-frequency = <2000000>;
-        reg = <0>;
-        #gpio-cells = <2>;
-        ngpios = <16>;
-    };
-    //shifter1: 595@1 {
-    //    compatible = "zmk,gpio-595";
-    //    status = "okay";
-    //    gpio-controller;
-    //    spi-max-frequency = <5000000>;
-    //    reg = <1 0 1>;
-    //    #gpio-cells = <2>;
-    //    ngpios = <24>;
-    //};
+    gpio-controller;
+    spi-max-frequency = <2000000>;
+    #gpio-cells = <2>;
+    reg = <0>;
+    ngpios = <16>;
+  };
 };
 
 / {
