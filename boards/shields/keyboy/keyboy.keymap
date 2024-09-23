@@ -15,8 +15,8 @@
         };
         emu_layer {
             bindings = <
-				&kp F &tog 1
-				&kp RIGHT &kp LEFT
+				&bt BT_NXT &tog 1
+				&bt BT_PRV_DEV &kp LEFT
             >;
         };
     };
