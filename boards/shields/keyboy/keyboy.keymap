@@ -10,7 +10,7 @@
         default_layer {
             bindings = <
 				&kp A &tog 1
-				&kp B &kp D
+				&kp B &kp C
             >;
         };
         emu_layer {
